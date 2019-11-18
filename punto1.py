@@ -53,13 +53,9 @@ def pot_A0():
     global prom
     i=1
     prom=0
-    
-    #while i<1:
-        #i=i+1
     x=a_0.read()
     print(x)
     pot1.set(x)
-    #prom=x+prom
     ventana.update()
     time.sleep(0.1)
         
@@ -73,17 +69,13 @@ def pot_A1():
     global prom
     i=0
     prom=0
-    
-    while i<1:
-        i=i+1
-        x=a_1.read()
-        print(x)
-        pot2.set(x)
-        #prom=x+prom
-        ventana.update()
-        time.sleep(0.1)
-        ref = db.reference('sensor')
-        ref.update({
+    x=a_1.read()
+    print(x)
+    pot2.set(x)
+    ventana.update()
+    time.sleep(0.1)
+    ref = db.reference('sensor')
+    ref.update({
         'sensor1/pot2': x
     })
    
@@ -92,17 +84,13 @@ def pot_A2():
     global prom
     i=0
     prom=0
-    
-    while i<1:
-        i=i+1
-        x=a_2.read()
-        print(x)
-        pot3.set(x)
-        #prom=x+prom
-        ventana.update()
-        time.sleep(0.1)
-        ref = db.reference('sensor')
-        ref.update({
+    x=a_2.read()
+    print(x)
+    pot3.set(x)
+    ventana.update()
+    time.sleep(0.1)
+    ref = db.reference('sensor')
+    ref.update({
         'sensor1/pot3': x
     })
 
