@@ -7,6 +7,9 @@ from tkinter import *
 from PIL import Image
 from PIL import ImageTk
 import time
+cont=0
+cont1=100
+prom=0
 
 placa = Arduino ('COM3')
 it = util.Iterator(placa)
@@ -14,7 +17,12 @@ it.start()
 a_0 = placa.get_pin('a:0:i')
 a_1 = placa.get_pin('a:1:i')
 a_2 = placa.get_pin('a:2:i')
-
+led = placa.get_pin('d:8:o')
+led1 = placa.get_pin('d:9:p')
+led5 = placa.get_pin('d:10:p')
+led6 = placa.get_pin('d:11:p')
+led7 = placa.get_pin('d:12:o')
+led8 = placa.get_pin('d:13:o')
 
 time.sleep(0.1)
 ventana = Tk()
@@ -42,7 +50,9 @@ pot3=StringVar()
 
 
 def pot_A0():
+    global prom
     i=1
+    prom=0
     x=a_0.read()
     print(x)
     pot1.set(x)
@@ -56,7 +66,9 @@ def pot_A0():
     })
 
 def pot_A1():
+    global prom
     i=0
+    prom=0
     x=a_1.read()
     print(x)
     pot2.set(x)
@@ -69,7 +81,9 @@ def pot_A1():
    
 
 def pot_A2():
+    global prom
     i=0
+    prom=0
     x=a_2.read()
     print(x)
     pot3.set(x)
